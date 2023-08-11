@@ -1,0 +1,37 @@
+{
+    "index":{
+        "placeholder":"Pokemon finder",
+        "select":{
+            "placeholder": "No type",
+            "normal": "Normal",
+            "fire": "Fire",
+            "water": "Water",
+            "grass": "Grass",
+            "flying": "Flying",
+            "fighting": "Fighting",
+            "poison": "Poison",
+            "electric": "Electric",
+            "ground": "Ground",
+            "rock": "Rock",
+            "psyquic": "Psyquic",
+            "ice": "Ice",
+            "bug": "Bug",
+            "ghost": "Ghost",
+            "steel": "Steel",
+            "dragon": "Dragon",
+            "dark": "Dark",
+            "fairy": "Fairy"
+        }
+    },
+    "details":{
+        "weight": "Weight",
+        "height": "Height",
+        "performance": "Performance",
+        "hp":  "HP ",
+        "atk": "ATK",
+        "def": "DEF",
+        "spa": "SPA",
+        "spd": "SPD",
+        "spe": "SPE"
+    }
+}

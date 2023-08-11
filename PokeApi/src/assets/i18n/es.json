@@ -1,0 +1,37 @@
+{
+    "index":{
+        "placeholder":"Buscador de Pokemon",
+        "select":{
+            "placeholder": "No tipo",
+            "normal": "Normal",
+            "fire": "Fuego",
+            "water": "Agua",
+            "grass": "Planta",
+            "flying": "Volador",
+            "fighting": "Lucha",
+            "poison": "Veneno",
+            "electric": "Eléctrico",
+            "ground": "Tierra",
+            "rock": "Roca",
+            "psyquic": "Psíquico",
+            "ice": "Hielo",
+            "bug": "Bicho",
+            "ghost": "Fantasma",
+            "steel": "Acero",
+            "dragon": "Dragón",
+            "dark": "Siniestro",
+            "fairy": "Hada"
+        }
+    },
+    "details":{
+        "weight": "Peso",
+        "height": "Altura",
+        "performance": "Rendimiento",
+        "hp": "PV ",
+        "atk": "ATQ",
+        "def": "DEF",
+        "spa": "ATS",
+        "spd": "DSP",
+        "spe": "VEL"
+    }
+}

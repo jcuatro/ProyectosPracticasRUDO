@@ -1,0 +1,63 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <div class="body">
+    <div class="img-container" style="background-color: {{pokeSpecie.color?.name}}">
+      <div class="icon-container">
+        <ion-icon name="arrow-back-outline" (click)="pokeList()" class="back"></ion-icon>
+      </div>
+      <img [src]="pokeInfo.sprites?.other?.dream_world.front_default" alt="" class="img">
+    </div>
+
+    <div class="data">
+        <h1>{{pokeInfo.name}}</h1>
+    </div>
+
+    <div class="type-container">
+      <div *ngFor="let type of pokeInfo.types" class="types" style="background-color: {{type.type.color.colorHex}}">
+        <div>
+          <span>{{type.type.name}}</span>
+        </div>
+      </div>
+    </div>
+  
+  <div class="sizes">
+    <div class="weight">
+      <span class="value">{{weight}} KG</span>
+      <span>{{ 'details.weight' | translate }}</span>
+    </div>
+    <div class="height">
+      <span class="value">{{height}} M</span>
+      <span>{{ 'details.height' | translate }}</span>
+    </div>
+  </div>
+
+    <div class="stats">
+      <div class="text">
+        <ion-icon name="star-outline" id="star"></ion-icon>
+        <span>{{ 'details.performance' | translate }}</span>
+        <ion-icon name="star-outline" id="star"></ion-icon>
+      </div>
+
+      <div *ngFor="let stat of pokeInfo.stats" class="stat-table">
+        <div [ngSwitch]="stat.stat.name" class="stat-container">
+          <span class="stat-name" *ngSwitchCase="'hp'">{{ 'details.hp' | translate }} : </span>
+          <span class="stat-name" *ngSwitchCase="'attack'">{{ 'details.atk' | translate }}: </span>
+          <span class="stat-name" *ngSwitchCase="'defense'">{{ 'details.def' | translate }}: </span>
+          <span class="stat-name" *ngSwitchCase="'special-attack'">{{ 'details.spa' | translate }}: </span>
+          <span class="stat-name" *ngSwitchCase="'special-defense'">{{ 'details.spd' | translate }}: </span>
+          <span class="stat-name" *ngSwitchCase="'speed'">{{ 'details.spe' | translate }}: </span>
+        </div>
+        <div class="parent">
+          <div class="bar" style="width: {{stat.width}}%; background-color:{{stat.color}};">
+            <span class="stat-value">{{ stat.base_stat }}/200</span>
+          </div>
+          <div class="container" style="width: {{100-stat.width}}%">
+            <p></p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</ion-content>

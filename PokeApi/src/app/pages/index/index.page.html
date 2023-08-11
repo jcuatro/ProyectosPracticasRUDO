@@ -1,0 +1,42 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <div class="header">
+    <ion-searchbar placeholder="{{ 'index.placeholder' | translate }}" (ionChange)="filter($event)" class="searchBar"></ion-searchbar>
+  <ion-select class="select" (ionChange)="typeFilter($event)" placeholder="{{ 'index.select.placeholder' | translate }}">
+  <ion-select-option>{{ 'index.select.normal' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.fire' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.water' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.grass' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.flying' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.fighting' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.poison' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.electric' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.ground' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.rock' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.psyquic' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.ice' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.bug' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.ghost' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.steel' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.dragon' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.dark' | translate }}</ion-select-option>
+  <ion-select-option>{{ 'index.select.fairy' | translate }}</ion-select-option>
+  </ion-select>
+  </div>
+  <div class="flex-container">
+    <div *ngFor="let poke of pokemonList | filter: text" class="img-container" style="background-color: {{poke.color?.colorHex}}">
+      <div class="flex-item" (click)="pokeDetails(poke.name, poke)">
+        <img *ngIf="poke.pokeIndex <= 905" src="{{poke.image}}" class="img-api">
+        <img *ngIf="poke.pokeIndex > 905" src="../../../assets/img/placeholder.jpeg" class="img-placeholder">
+        <p class="name">{{poke.name}}</p>
+      </div>
+    </div>
+    <ion-infinite-scroll (ionInfinite)="listPokemon(true, $event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+
+</ion-content>
